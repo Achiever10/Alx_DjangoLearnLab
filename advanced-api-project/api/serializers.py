@@ -20,7 +20,7 @@ class BookSerializer(serializers.ModelSerializer):
 The relationship between author and book is handled using nested serializers
 """
 class AuthorSerializer(serializers.ModelSerializer):
-    books = BookSerializer(many=True, read_only=True, source='book_set')
+    books = BookSerializer(many=True, read_only=True)
 
     class Meta:
         model = Author
